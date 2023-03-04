@@ -1,0 +1,77 @@
+<TYPE html>
+    <head>
+    <title>Feedback</title>
+    <link rel="stylesheet" href="myclasses.css">
+    </head>
+    <body id="background" class="Colors" style="color:brown">
+      <h1> Feedback Page </h1>
+      <div id="bigPage">
+      <div class="social-distance">
+        Please leave your comments about my website. I greatly appreciate all feedback.
+      </div>
+      <div class="flex-container">
+        <form action="" method="get" onsubmit="return myFunction()">
+            <div class="social-distance">
+                Rate my website:
+                <input type="radio" name="Star" value="*" required> 1
+                <input type="radio" name="Star" value="**"> 2
+                <input type="radio" name="Star" value="***"> 3
+                <input type="radio" name="Star" value="****"> 4
+                <input type="radio" name="Star" value="*****"> 5
+            </div>
+            <div class="social-distance">Feedback:<textarea id="story" name="story" rows="5" cols="33"></textarea>
+            </div>
+          <div class="social-distance">
+            <label for="name">Enter your email: </label>
+            <input type="text" name="email" id="email" required>
+          </div>
+          <div class="padding: 30px">
+            <input type="submit" value="Submit">
+          </div>
+        </form>
+    </div>
+      </div>
+      <div class="social-distance">
+       Click here to return to the main page.
+      </div>
+      <div class="social-distance">
+        <a href="Main.html">Home Page</a>
+      </div>
+    </div>
+    <script>
+
+      function wordCount() {
+        var text = document.getElementById("story").value;
+        var count = 0;
+        var split = text.split(' ');
+        for (var i = 0; i < split.length; i++) {
+         if (split[i] != "") {
+          count ++;
+         }
+        }
+        return count;
+       }
+
+      function myFunction() {
+        var rating = document.querySelector('input[name="Star"]:checked').value;
+        var email = document.getElementById("email").value; //textContent?
+        var feedback = wordCount();
+        var correct = true;
+
+        if (!email.includes("@") || !email.includes(".")){
+          var correct = false;
+        }
+
+        const para = document.createElement("p");
+        const node = document.createTextNode(`${rating}`);
+        const rode = document.createTextNode(`${email}`);
+        const plode = document.createTextNode(`${feedback}`);
+        para.appendChild(node);
+        const element = document.getElementById("bigPage");
+        element.appendChild(para);
+        
+        alert(`Rating: ${rating} , Correct Email: ${correct} , Number of Words: ${feedback}`)
+      }
+
+    </script>
+    </body>
