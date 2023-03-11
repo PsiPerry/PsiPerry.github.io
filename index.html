@@ -3,12 +3,44 @@
     <title>Feedback</title>
     <link rel="stylesheet" href="myclasses.css">
     </head>
-    <body id="background" class="Colors" style="color:brown">
+    <body id="background" class="Colors">
       <h1> Feedback Page </h1>
+
+      <div class="dropdown">
+        <button class="dropbtn">Home Page</button>
+        <div class="dropdown-content">
+          <a href="#">Projects</a>
+          <a href="#">Education</a>
+          <a href="#">Languages</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Secondary Page</button>
+        <div class="dropdown-content">
+          <a href="#">Construction</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">About Me</button>
+        <div class="dropdown-content">
+          <a href="#">Origins</a>
+          <a href="#">Interests</a>
+        </div>
+      </div>
+
       <div id="bigPage">
+      <div id="websiteTheme" class="social-distance">
+        <button id="theme" onclick="changeTheme()">
+          Change Theme
+        </button>
+      </div>
+
       <div class="social-distance">
         Please leave your comments about my website. I greatly appreciate all feedback.
       </div>
+
       <div class="flex-container">
         <form action="" method="get" onsubmit="return myFunction()">
             <div class="social-distance">
@@ -38,7 +70,15 @@
         <a href="Main.html">Home Page</a>
       </div>
     </div>
+
     <script>
+      function changeTheme(){
+        if (document.getElementById("background").className == "dark-colors"){
+          document.getElementById("background").className = "Colors";
+        } else {
+          document.getElementById("background").className = "dark-colors";
+        }
+      }
 
       function wordCount() {
         var text = document.getElementById("story").value;
@@ -54,7 +94,7 @@
 
       function myFunction() {
         var rating = document.querySelector('input[name="Star"]:checked').value;
-        var email = document.getElementById("email").value; //textContent?
+        var email = document.getElementById("email").value;
         var feedback = wordCount();
         var correct = true;
 
