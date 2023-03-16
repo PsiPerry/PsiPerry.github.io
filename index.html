@@ -1,117 +1,69 @@
 <TYPE html>
-    <head>
-    <title>Feedback</title>
-    <link rel="stylesheet" href="myclasses.css">
-    </head>
-    <body id="background" class="Colors">
-      <h1> Feedback Page </h1>
-
-      <div class="dropdown">
-        <button class="dropbtn">Home Page</button>
-        <div class="dropdown-content">
-          <a href="#">Projects</a>
-          <a href="#">Education</a>
-          <a href="#">Languages</a>
+  <head>
+  <title>Index</title>
+  <link rel="stylesheet" href="myclasses.css">
+  </head>
+  <body id="background" class="Colors">
+    <h1> Home Page </h1>
+    <div>
+      <form action="" method="get">
+        <div>
+          <label for="name">Enter your name: </label>
+          <input type="text" name="name" id="name" required>
         </div>
-      </div>
-
-      <div class="dropdown">
-        <button class="dropbtn">Secondary Page</button>
-        <div class="dropdown-content">
-          <a href="#">Construction</a>
+        <div>
+          <label for="email">Do you even have an email?</label>
+          <input type="checkbox" name="emailbolean" id="emailboolean" required>
         </div>
-      </div>
-
-      <div class="dropdown">
-        <button class="dropbtn">About Me</button>
-        <div class="dropdown-content">
-          <a href="#">Origins</a>
-          <a href="#">Interests</a>
+        <div>
+          <input type="submit" value="You done?">
         </div>
-      </div>
-
-      <div id="bigPage">
-      <div id="websiteTheme" class="social-distance">
-        <button id="theme" onclick="changeTheme()">
-          Change Theme
-        </button>
-      </div>
-
-      <div class="social-distance">
-        Please leave your comments about my website. I greatly appreciate all feedback.
-      </div>
-
-      <div class="flex-container">
-        <form action="" method="get" onsubmit="return myFunction()">
-            <div class="social-distance">
-                Rate my website:
-                <input type="radio" name="Star" value="*" required> 1
-                <input type="radio" name="Star" value="**"> 2
-                <input type="radio" name="Star" value="***"> 3
-                <input type="radio" name="Star" value="****"> 4
-                <input type="radio" name="Star" value="*****"> 5
-            </div>
-            <div class="social-distance">Feedback:<textarea id="story" name="story" rows="5" cols="33"></textarea>
-            </div>
-          <div class="social-distance">
-            <label for="name">Enter your email: </label>
-            <input type="text" name="email" id="email" required>
-          </div>
-          <div class="padding: 30px">
-            <input type="submit" value="Submit">
-          </div>
-        </form>
+      </form>
     </div>
-      </div>
-      <div class="social-distance">
-       Click here to return to the main page.
-      </div>
-      <div class="social-distance">
-        <a href="Main.html">Home Page</a>
+    <div class="flex-container" style="color:aquamarine">
+      <div class="flex-container2">
+        <div class="flex-item"> h</div>
+        <div class="flex-item"> e</div>
+        <div class="flex-item"> l</div>
+        <div class="flex-item"> l</div>
+        <div class="flex-item"> o</div>
       </div>
     </div>
-
-    <script>
-      function changeTheme(){
-        if (document.getElementById("background").className == "dark-colors"){
-          document.getElementById("background").className = "Colors";
-        } else {
-          document.getElementById("background").className = "dark-colors";
-        }
-      }
-
-      function wordCount() {
-        var text = document.getElementById("story").value;
-        var count = 0;
-        var split = text.split(' ');
-        for (var i = 0; i < split.length; i++) {
-         if (split[i] != "") {
-          count ++;
-         }
-        }
-        return count;
-       }
-
-      function myFunction() {
-        var rating = document.querySelector('input[name="Star"]:checked').value;
-        var email = document.getElementById("email").value;
-        var feedback = wordCount();
-        var correct = true;
-
-        if (!email.includes("@") || !email.includes(".")){
-          var correct = false;
-        }
-
-        const para = document.createElement("p");
-        const node = document.createTextNode(`${rating}`);
-        const rode = document.createTextNode(`${email}`);
-        const plode = document.createTextNode(`${feedback}`);
-        para.appendChild(node);
-        const element = document.getElementById("bigPage");
-        element.appendChild(para);
-        
-        alert(`Rating: ${rating} , Correct Email: ${correct} , Number of Words: ${feedback}`)
-      }
-
-    </script>
-    </body>
+    <div class="social-distance">
+      <a href="Second.html">Secondary Page</a>
+      <a href="AboutMe.html">About Me</a>
+      <a href="Feedback.html">Feedback</a>
+    </div>
+    <div>
+      <p class="alternative-color">
+        this sure is a paragraph here. wow would you look at that!
+        <p> 
+          im going to just keep building off of this main page (and possibly others) for future quizzes, if that's alright.
+        </p>
+      </p>
+    </div>
+    <li class="social-distance"> wow, an item! </li>
+    <table>
+      <tr>
+        <th>This</th>
+        <th>That</th>
+      </tr>
+      <tr>
+        <td>Apple</td>
+        <td>Grape</td>
+      </tr>
+      <tr>
+        <td>Orange</td>
+        <td>Lemon</td>
+      </tr>
+    </table> 
+    <div id="address" class="BoldItalic">
+      <p>
+        308 Negra Arroyo Lane, Albuquerque, NM
+        <p>
+          did you know? im nested inside here as an element! AND I inherit the color/font settings!
+        </p>
+      </p>
+    </div>
+  </body>
+</html>
