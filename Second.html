@@ -5,6 +5,11 @@
     </head>
     <body id="background" class="Colors" style="color:brown">
       <h1> Page Currently Under Maintainence </h1>
+      <div id="websiteTheme" class="social-distance">
+        <button id="theme" onclick="changeTheme()">
+          Change Theme
+        </button>
+      </div>
       <div class="social-distance">
         This page is currently under construction. Please return at another time.
       </div>
@@ -16,4 +21,13 @@
         <a href="index.html">Home Page</a>
         <a href="AboutMe.html">About Me</a>
       </div>
+      <script>
+        function changeTheme(){
+          if (document.getElementById("background").className == "dark-colors"){
+            document.getElementById("background").className = "Colors";
+          } else {
+            document.getElementById("background").className = "dark-colors";
+          }
+        }
+      </script>
     </body>
