@@ -32,6 +32,13 @@
       </div>
     </div>
 
+    <div class="dropdown">
+      <button class="dropbtn">Rating</button>
+      <div class="dropdown-content">
+        <a href="Feedback.html">Feedback</a>
+      </div>
+    </div>
+
     <div id="bigPage">
     <div id="websiteTheme" class="social-distance">
       <button id="theme" onclick="changeTheme()">
@@ -43,7 +50,7 @@
       Please leave your comments about my website. I greatly appreciate all feedback.
     </div>
 
-    <div class="flex-container">
+    <div id="flexlarge" class="flex-container">
       <form action="" method="get" onsubmit="return myFunction()">
           <div class="social-distance">
               Rate my website:
@@ -65,20 +72,16 @@
       </form>
   </div>
     </div>
-    <div class="social-distance">
-     Click here to return to the main page.
-    </div>
-    <div class="social-distance">
-      <a href="index.html">Home Page</a>
-    </div>
   </div>
 
   <script>
     function changeTheme(){
       if (document.getElementById("background").className == "dark-colors"){
         document.getElementById("background").className = "Colors";
+        document.getElementById("flexlarge").className = "flex-container";
       } else {
         document.getElementById("background").className = "dark-colors";
+        document.getElementById("flexlarge").className = "dark-flex-container";
       }
     }
 
