@@ -8,7 +8,7 @@
       <h1 class="Heading"> Education </h1>
   
       <div class="dropdown">
-        <button class="dropbtn">Home Page</button>
+        <button id="HomeBtn" class="dropbtn">Home Page</button>
         <div class="dropdown-content">
           <a href="index.html">Welcome Page</a>
           <a href="Projects.html">Projects</a>
@@ -18,14 +18,14 @@
       </div>
   
       <div class="dropdown">
-        <button class="dropbtn">Secondary Page</button>
+        <button id="DemoBtn" class="dropbtn">Demo Page</button>
         <div class="dropdown-content">
           <a href="Second.html">Cool Stuff</a>
         </div>
       </div>
   
       <div class="dropdown">
-        <button class="dropbtn">About Me</button>
+        <button id="AboutBtn" class="dropbtn">About Me</button>
         <div class="dropdown-content">
           <a href="AboutMe.html">Origins</a>
           <a href="AboutMe.html">Interests</a>
@@ -33,7 +33,7 @@
       </div>
 
       <div class="dropdown">
-        <button class="dropbtn">Rating</button>
+        <button id="RateBtn" class="dropbtn">Rating</button>
         <div class="dropdown-content">
           <a href="Feedback.html">Feedback</a>
         </div>
@@ -77,8 +77,16 @@
         function changeTheme(){
           if (document.getElementById("background").className == "dark-colors"){
             document.getElementById("background").className = "Colors";
+            document.getElementById("HomeBtn").className = "dropbtn";
+            document.getElementById("DemoBtn").className = "dropbtn";
+            document.getElementById("AboutBtn").className = "dropbtn";
+            document.getElementById("RateBtn").className = "dropbtn";
           } else {
             document.getElementById("background").className = "dark-colors";
+            document.getElementById("HomeBtn").className = "dark-dropbtn";
+            document.getElementById("DemoBtn").className = "dark-dropbtn";
+            document.getElementById("AboutBtn").className = "dark-dropbtn";
+            document.getElementById("RateBtn").className = "dark-dropbtn";
           }
         }
       </script>
