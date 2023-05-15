@@ -1,10 +1,23 @@
-.Heading{
-    font-family: 'Nexa', sans-serif;
-    text-align: center;                           
+.Alternative-color {
+    color:chocolate;
 }
 
-.Center{
-    text-align: center;                           
+.board {
+    width: 240px;
+    height: 240px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    border: 1px solid black;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    margin: 0;
 }
 
 .BoldItalic {
@@ -12,52 +25,38 @@
     font-style: italic;
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.Center {
+    text-align: center;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    cursor: pointer;
+    border: 1px solid black;
+}
+  
+.cell:hover {
+    background-color: #eee;
+}
+
 .Colors {
-    background-color:beige;
+    background-color: beige;
     font-family: 'Courier New', Courier, monospace;
-    color:brown;
+    color: brown;
 }
 
 .dark-colors {
     background-color: #424549;
     font-family: 'Courier New', Courier, monospace;
-    color:#04AA6D;
-}
-
-.flex-container{
-    display: flex;
-    background-color:goldenrod;
-    flex-direction: column;
-    justify-content: left;
-    color:black;
-}
-
-.flex-container2{
-    display: flex;
-    flex-direction: row;
-}
-
-.flex-item{
-    background-color:black;
-    margin: 10px;
-    font-size: 10em;
-    flex: 1;
-}
-
-.dark-flex-container{
-    display: flex;
-    background-color:#04AA6D;
-    flex-direction: column;
-    justify-content: left;
-    color:#424549;
-}
-
-.social-distance{
-    padding: 20px 20px 20px 20px;
-}
-
-.alternative-color{
-    color:chocolate;
+    color: #04AA6D;
 }
 
 .dark-dropbtn {
@@ -67,61 +66,191 @@
     font-size: 16px;
     border: none;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  }
+}
+
+.dark-flex-container {
+    display: flex;
+    background-color: #04AA6D;
+    flex-direction: column;
+    justify-content: left;
+    color: #424549;
+    align-items: center;
+}
+
+.download-link {
+    display: block;
+    margin-top: 200px;
+    text-align: center;
+}
 
 .dropbtn {
-background-color: chocolate;
-color: white;
-padding: 16px;
-font-size: 16px;
-border: none;
-box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    background-color: chocolate;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
-  
-  /* The container <div> - needed to position the dropdown content */
-  .dropdown {
+
+.dropdown {
     position: relative;
-    display: inline-block;
-    /* margin: 0;
-    /* position: absolute; */
-    /* top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%); */
-    /* margin: 0;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); */
-    /* position: relative;
-    display: inline-block; */
-    
-  }
-  
-  /* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
+}
+
+.dropdown-content {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-  }
-  
-  /* Links inside the dropdown */
-  .dropdown-content a {
+}
+
+.dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-  }
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    left: 0;
+    right: 0;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: rgb(157, 89, 40);
+}
+
+.dropdown:hover .dark-dropbtn {
+    background-color: #3e8e41;
+}
+
+.flex-container {
+    display: flex;
+    background-color: goldenrod;
+    flex-direction: column;
+    justify-content: center;
+    color: black;
+    align-items: center;
+}
+
+.flex-container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.flex-item {
+    background-color: black;
+    margin: 10px;
+    font-size: 10em;
+    flex: 1;
+}
+
+.flex-item img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: none;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: larger;
+    width: 100%;
+    max-width: 100%;
+}
+
+#game-container {
+    width: 300px;
+    height: 300px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    font-weight: bold;
+}
+
+.Heading {
+    font-family: 'Nexa', sans-serif;
+    text-align: center;
+}
+
+
+.social-distance{
+    padding: 20px 20px 20px 20px;
+}
+
+.resume-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.preview-container {
+    max-width: 600px;
+    height: 600px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+}
+
+.table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.row {
+    display: table-row;
+}
+
+.table-cell {
+    display: table-cell;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+#background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
   
-  /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #ddd;}
+  #word-container {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
   
-  /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {display: block;}
+  #guesses-container {
+    margin-bottom: 20px;
+}
   
-  /* Change the background color of the dropdown button when the dropdown content is shown */
-  .dropdown:hover .dropbtn {background-color: rgb(157, 89, 40);}
-  .dropdown:hover .dark-dropbtn {background-color: #3e8e41;}
+  #letter-input {
+    width: 30px;
+    text-transform: uppercase;
+    margin-right: 10px;
+}
+  
+  #message-container {
+    font-weight: bold;
+}
+  
+  #guessed-letters {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 16px;
+}        

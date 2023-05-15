@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resume</title>
+  <link rel="stylesheet" href="myclasses.css">
+  <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+</head>
+<body id="background" class="Colors">
+    <div class="footer">
+        <p>Resume</p>
+    </div>
+
+    <div class="button-container">
+        <div class="dropdown">
+          <button id="HomeBtn" class="dropbtn">Home</button>
+          <div class="dropdown-content">
+            <a href="index.html">Welcome</a>
+            <a href="Projects.html">Projects</a>
+            <a href="Education.html">Education</a>
+            <a href="Languages.html">Languages</a>
+          </div>
+        </div>
+      
+        <div class="dropdown">
+          <button id="DemoBtn" class="dropbtn">Demo</button>
+          <div class="dropdown-content">
+            <a href="Second.html">Cool Stuff!</a>
+          </div>
+        </div>
+      
+        <div class="dropdown">
+          <button id="AboutBtn" class="dropbtn">Resume and About Me</button>
+          <div class="dropdown-content">
+            <a href="ResumeDownload.html">Resume</a>
+            <a href="AboutMe.html">About Me</a>
+          </div>
+        </div>
+      
+        <div class="dropdown">
+          <button id="RateBtn" class="dropbtn">Feedback</button>
+          <div class="dropdown-content">
+            <a href="Feedback.html">Feedback</a>
+          </div>
+        </div>
+      </div>
+
+    <div id="websiteTheme" class="social-distance">
+        <button id="theme" onclick="changeTheme()">
+            Change Theme
+        </button>
+    </div>
+
+    <div id="flexlarge" class="flex-container">
+        <div class="resume-wrapper">
+            <div class="preview-container">
+                <canvas id="pdf-preview"></canvas>
+            </div>
+            <a class="download-link" href="Perry_Resume_2022.pdf" download>Download PDF</a>
+        </div>
+    </div>
+
+  <script>
+    function renderPDF(url, canvasContainer) {
+      pdfjsLib.getDocument(url).promise.then(function(pdf) {
+        pdf.getPage(1).then(function(page) {
+          var viewport = page.getViewport({ scale: 1 });
+          var canvas = document.getElementById('pdf-preview');
+          var context = canvas.getContext('2d');
+          canvas.height = viewport.height;
+          canvas.width = viewport.width;
+
+          page.render({
+            canvasContext: context,
+            viewport: viewport
+          });
+        });
+      });
+    }
+
+    renderPDF('Perry_Resume_2022.pdf', 'pdf-preview');
+
+    function changeTheme(){
+        if (document.getElementById("background").className == "dark-colors"){
+        document.getElementById("background").className = "Colors";
+        document.getElementById("HomeBtn").className = "dropbtn";
+        document.getElementById("DemoBtn").className = "dropbtn";
+        document.getElementById("AboutBtn").className = "dropbtn";
+        document.getElementById("RateBtn").className = "dropbtn";
+        document.getElementById("flexlarge").className = "flex-container";
+        } else {
+        document.getElementById("background").className = "dark-colors";
+        document.getElementById("HomeBtn").className = "dark-dropbtn";
+        document.getElementById("DemoBtn").className = "dark-dropbtn";
+        document.getElementById("AboutBtn").className = "dark-dropbtn";
+        document.getElementById("RateBtn").className = "dark-dropbtn";
+        document.getElementById("flexlarge").className = "dark-flex-container";
+        }
+    }
+  </script>
+</body>
+</html>

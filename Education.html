@@ -1,41 +1,45 @@
-<TYPE html>
+<!DOCTYPE html>
     <head>
     <title>Education</title>
     <link rel="stylesheet" href="myclasses.css">
     <link href="https://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet">
     </head>
     <body id="background" class="Colors">
-      <h1 class="Heading"> Education </h1>
-  
-      <div class="dropdown">
-        <button id="HomeBtn" class="dropbtn">Home Page</button>
-        <div class="dropdown-content">
-          <a href="index.html">Welcome Page</a>
-          <a href="Projects.html">Projects</a>
-          <a href="Education.html">Education</a>
-          <a href="Languages.html">Languages</a>
-        </div>
+      <div class="footer">
+        <p>Education</p>
       </div>
   
-      <div class="dropdown">
-        <button id="DemoBtn" class="dropbtn">Demo Page</button>
-        <div class="dropdown-content">
-          <a href="Second.html">Cool Stuff</a>
+      <div class="button-container">
+        <div class="dropdown">
+          <button id="HomeBtn" class="dropbtn">Home</button>
+          <div class="dropdown-content">
+            <a href="index.html">Welcome</a>
+            <a href="Projects.html">Projects</a>
+            <a href="Education.html">Education</a>
+            <a href="Languages.html">Languages</a>
+          </div>
         </div>
-      </div>
-  
-      <div class="dropdown">
-        <button id="AboutBtn" class="dropbtn">About Me</button>
-        <div class="dropdown-content">
-          <a href="AboutMe.html">Origins</a>
-          <a href="AboutMe.html">Interests</a>
+      
+        <div class="dropdown">
+          <button id="DemoBtn" class="dropbtn">Demo</button>
+          <div class="dropdown-content">
+            <a href="Second.html">Cool Stuff!</a>
+          </div>
         </div>
-      </div>
-
-      <div class="dropdown">
-        <button id="RateBtn" class="dropbtn">Rating</button>
-        <div class="dropdown-content">
-          <a href="Feedback.html">Feedback</a>
+      
+        <div class="dropdown">
+          <button id="AboutBtn" class="dropbtn">Resume and About Me</button>
+          <div class="dropdown-content">
+            <a href="ResumeDownload.html">Resume</a>
+            <a href="AboutMe.html">About Me</a>
+          </div>
+        </div>
+      
+        <div class="dropdown">
+          <button id="RateBtn" class="dropbtn">Feedback</button>
+          <div class="dropdown-content">
+            <a href="Feedback.html">Feedback</a>
+          </div>
         </div>
       </div>
   
@@ -45,16 +49,24 @@
         </button>
       </div>
 
-      <div class="social-distance">
-      <img src="Nebraska.png" width="985" height="500" alt="GBR">
+      <div id="flexlarge" class="flex-container">
+        <div id="flex1" class="flex-container2">
+          <div class="flex-item">
+            <img src="Nebraska.png" width="985" height="500" alt="GBR">
+          </div>
+        </div>
       </div>
 
       <div class="social-distance">
         As you may know, I attend the University of Nebraska-Lincoln. I'm pursuing a Bachelor of Science in Software Engineering.
       <div>
 
-      <div class="social-distance">
-      <img src="Preparatory.png" alt="blueeeeeejays">
+      <div id="flexlarge2" class="flex-container">
+        <div id="flex1" class="flex-container2">
+          <div class="flex-item">
+            <img src="Preparatory.png" alt="blueeeeeejays">
+          </div>
+        </div>
       </div>
 
       <div class="social-distance">
@@ -64,7 +76,15 @@
       <div class="social-distance">
       I didn't specialize in anything particular as I went about my schooling, but I did learn towards the end that coding, and further on, Software Development is what I wanted to pursue as a career.
       Initially, I wanted to be able to create video games for people to enjoy just as I appreciated them when I was younger, but this grew to be far more challenging than orginally expected. Making a game in general let alone by yourself is a very time-consuming and arduous task.
-      Every single thing you need to know how to fix or create with little outside help. It won't stop me from trying in the future when I have a bit more time on my hands though.
+      Every single thing you need to know how to fix or create with little outside help. It won't stop me from trying in the future when I have a bit more time and experience on my hands though.
+      </div>
+
+      <div id="flexlarge3" class="flex-container">
+        <div id="flex1" class="flex-container2">
+          <div class="flex-item">
+            <img src="StateSwimming.png" alt="SwimTeam">
+          </div>
+        </div>
       </div>
 
       <div class="social-distance">
@@ -81,12 +101,18 @@
             document.getElementById("DemoBtn").className = "dropbtn";
             document.getElementById("AboutBtn").className = "dropbtn";
             document.getElementById("RateBtn").className = "dropbtn";
+            document.getElementById("flexlarge").className = "flex-container";
+            document.getElementById("flexlarge2").className = "flex-container";
+            document.getElementById("flexlarge3").className = "flex-container";
           } else {
             document.getElementById("background").className = "dark-colors";
             document.getElementById("HomeBtn").className = "dark-dropbtn";
             document.getElementById("DemoBtn").className = "dark-dropbtn";
             document.getElementById("AboutBtn").className = "dark-dropbtn";
             document.getElementById("RateBtn").className = "dark-dropbtn";
+            document.getElementById("flexlarge").className = "dark-flex-container";
+            document.getElementById("flexlarge2").className = "dark-flex-container";
+            document.getElementById("flexlarge3").className = "dark-flex-container";
           }
         }
       </script>

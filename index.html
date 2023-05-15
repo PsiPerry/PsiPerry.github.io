@@ -1,49 +1,55 @@
-<TYPE html>
-  <head>
-  <title>Index</title>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome</title>
   <link rel="stylesheet" href="myclasses.css">
   <link href="https://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet">
-  </head>
-  <body id="background" class="Colors">
-    <h1 class="Heading"> Home Page </h1>
+</head>
+<body id="background" class="Colors">
+    
+  <div class="footer">
+    <p>Welcome to My Website!</p>
+  </div>
 
+  <div class="button-container">
     <div class="dropdown">
-      <button id="HomeBtn" class="dropbtn">Home Page</button>
+      <button id="HomeBtn" class="dropbtn">Home</button>
       <div class="dropdown-content">
-        <a href="index.html">Welcome Page</a>
+        <a href="index.html">Welcome</a>
         <a href="Projects.html">Projects</a>
         <a href="Education.html">Education</a>
         <a href="Languages.html">Languages</a>
       </div>
     </div>
-
+  
     <div class="dropdown">
-      <button id="DemoBtn" class="dropbtn">Demo Page</button>
+      <button id="DemoBtn" class="dropbtn">Demo</button>
       <div class="dropdown-content">
-        <a href="Second.html">Cool Stuff</a>
+        <a href="Second.html">Cool Stuff!</a>
       </div>
     </div>
-
+  
     <div class="dropdown">
-      <button id="AboutBtn" class="dropbtn">About Me</button>
+      <button id="AboutBtn" class="dropbtn">Resume and About Me</button>
       <div class="dropdown-content">
-        <a href="AboutMe.html">Origins</a>
-        <a href="AboutMe.html">Interests</a>
+        <a href="ResumeDownload.html">Resume</a>
+        <a href="AboutMe.html">About Me</a>
       </div>
     </div>
-
+  
     <div class="dropdown">
-      <button id="RateBtn" class="dropbtn">Rating</button>
+      <button id="RateBtn" class="dropbtn">Feedback</button>
       <div class="dropdown-content">
         <a href="Feedback.html">Feedback</a>
       </div>
     </div>
+  </div>
 
-    <div id="websiteTheme" class="social-distance">
-      <button id="theme" onclick="changeTheme()">
-        Change Theme
-      </button>
-    </div>
+  <div id="websiteTheme" class="social-distance">
+    <button id="theme" onclick="changeTheme()">
+      Change Theme
+    </button>
+  </div>
 
     <div id="flexlarge" class="flex-container" style="color:aquamarine">
       <div id="flex1" class="flex-container2">
@@ -54,33 +60,48 @@
         <div class="flex-item"> o</div>
         <div class="flex-item"> m</div>
         <div class="flex-item"> e</div>
+        <div class="flex-item"> !</div>
       </div>
     </div>
 
     <div class="social-distance">
-      This is my (unfinished) semester long website project created for CSCE464, but will soon be transformed and improved to be used as my own personal website.
+      Thank you for visiting my website. This was created initially for CSCE464 as a semester-long project at University of Nebraska-Lincoln (UNL).
     </div>
-    
-    <script>
-      function changeTheme(){
-        if (document.getElementById("background").className == "dark-colors"){
-          document.getElementById("background").className = "Colors";
-          document.getElementById("flexlarge").className = "flex-container";
-          document.getElementById("flex1").className = "flex-container2";
-          document.getElementById("HomeBtn").className = "dropbtn";
-          document.getElementById("DemoBtn").className = "dropbtn";
-          document.getElementById("AboutBtn").className = "dropbtn";
-          document.getElementById("RateBtn").className = "dropbtn";
-        } else {
-          document.getElementById("background").className = "dark-colors";
-          document.getElementById("flexlarge").className = "dark-flex-container";
-          document.getElementById("flex1").className = "flex-container2";
-          document.getElementById("HomeBtn").className = "dark-dropbtn";
-          document.getElementById("DemoBtn").className = "dark-dropbtn";
-          document.getElementById("AboutBtn").className = "dark-dropbtn";
-          document.getElementById("RateBtn").className = "dark-dropbtn";
-        }
+
+    <div class="social-distance">
+      This is a portfolio website. Here, you may learn about my education, software development experiences, and even learn a bit about some of my hobbies.
+    </div>
+
+    <div class="social-distance">
+      If you are an employer, be sure to visit my "Resume and About Me" tab under the "Resume" section to download and view a copy of my resume (probably why you're here).
+    </div>
+
+    <div class="social-distance">
+      For all visitors, please browse around. When you're finished, please visit my "Feedback" tab. To leave a comment on what I can approve or change about this website. Enjoy!
+    </div>
+
+  <script>
+    function changeTheme(){
+      if (document.getElementById("background").className == "dark-colors"){
+        document.getElementById("background").className = "Colors";
+        document.getElementById("flexlarge").className = "flex-container";
+        document.getElementById("flex1").className = "flex-container2";
+        document.getElementById("HomeBtn").className = "dropbtn";
+        document.getElementById("DemoBtn").className = "dropbtn";
+        document.getElementById("AboutBtn").className = "dropbtn";
+        document.getElementById("RateBtn").className = "dropbtn";
+      } else {
+        document.getElementById("background").className = "dark-colors";
+        document.getElementById("flexlarge").className = "dark-flex-container";
+        document.getElementById("flex1").className = "flex-container2";
+        document.getElementById("HomeBtn").className = "dark-dropbtn";
+        document.getElementById("DemoBtn").className = "dark-dropbtn";
+        document.getElementById("AboutBtn").className = "dark-dropbtn";
+        document.getElementById("RateBtn").className = "dark-dropbtn";
       }
-    </script>
-  </body>
+    }
+  </script>
+</body>
+
 </html>
+

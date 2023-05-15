@@ -1,41 +1,45 @@
-<TYPE html>
+<!DOCTYPE html>
   <head>
   <title>Feedback</title>
   <link rel="stylesheet" href="myclasses.css">
   <link href="https://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet">
   </head>
   <body id="background" class="Colors">
-    <h1 class="Heading"> Feedback Page </h1>
-
-    <div class="dropdown">
-      <button id="HomeBtn" class="dropbtn">Home Page</button>
-      <div class="dropdown-content">
-        <a href="index.html">Welcome Page</a>
-        <a href="Projects.html">Projects</a>
-        <a href="Education.html">Education</a>
-        <a href="Languages.html">Languages</a>
-      </div>
+    <div class="footer">
+      <p>Feedback</p>
     </div>
 
-    <div class="dropdown">
-      <button id="DemoBtn" class="dropbtn">Demo Page</button>
-      <div class="dropdown-content">
-        <a href="Second.html">Cool Stuff</a>
+    <div class="button-container">
+      <div class="dropdown">
+        <button id="HomeBtn" class="dropbtn">Home</button>
+        <div class="dropdown-content">
+          <a href="index.html">Welcome</a>
+          <a href="Projects.html">Projects</a>
+          <a href="Education.html">Education</a>
+          <a href="Languages.html">Languages</a>
+        </div>
       </div>
-    </div>
-
-    <div class="dropdown">
-      <button id="AboutBtn" class="dropbtn">About Me</button>
-      <div class="dropdown-content">
-        <a href="AboutMe.html">Origins</a>
-        <a href="AboutMe.html">Interests</a>
+    
+      <div class="dropdown">
+        <button id="DemoBtn" class="dropbtn">Demo</button>
+        <div class="dropdown-content">
+          <a href="Second.html">Cool Stuff!</a>
+        </div>
       </div>
-    </div>
-
-    <div class="dropdown">
-      <button id="RateBtn" class="dropbtn">Rating</button>
-      <div class="dropdown-content">
-        <a href="Feedback.html">Feedback</a>
+    
+      <div class="dropdown">
+        <button id="AboutBtn" class="dropbtn">Resume and About Me</button>
+        <div class="dropdown-content">
+          <a href="ResumeDownload.html">Resume</a>
+          <a href="AboutMe.html">About Me</a>
+        </div>
+      </div>
+    
+      <div class="dropdown">
+        <button id="RateBtn" class="dropbtn">Feedback</button>
+        <div class="dropdown-content">
+          <a href="Feedback.html">Feedback</a>
+        </div>
       </div>
     </div>
 
@@ -51,7 +55,7 @@
     </div>
 
     <div id="flexlarge" class="flex-container">
-      <form action="" method="get" onsubmit="return myFunction()">
+      <form action="" method="get" onsubmit="return displayRate()">
           <div class="social-distance">
               Rate my website:
               <input type="radio" name="Star" value="*" required> 1
@@ -70,7 +74,6 @@
           <input type="submit" value="Submit">
         </div>
       </form>
-  </div>
     </div>
   </div>
 
@@ -93,38 +96,42 @@
       }
     }
 
-    function wordCount() {
-      var text = document.getElementById("story").value;
-      var count = 0;
-      var split = text.split(' ');
-      for (var i = 0; i < split.length; i++) {
-       if (split[i] != "") {
-        count ++;
-       }
-      }
-      return count;
-     }
-
-    function myFunction() {
+     function displayRate() {
       var rating = document.querySelector('input[name="Star"]:checked').value;
       var email = document.getElementById("email").value;
-      var feedback = wordCount();
+      var feedback = document.getElementById("story").value;
       var correct = true;
-
+    
       if (!email.includes("@") || !email.includes(".")){
         var correct = false;
       }
-
-      const para = document.createElement("p");
-      const node = document.createTextNode(`${rating}`);
-      const rode = document.createTextNode(`${email}`);
-      const plode = document.createTextNode(`${feedback}`);
-      para.appendChild(node);
-      const element = document.getElementById("bigPage");
-      element.appendChild(para);
+    
+      const feedbackContainer = document.createElement("div");
+      feedbackContainer.classList.add("feedback-container", "social-distance");
+    
+      const ratingPara = document.createElement("p");
+      const emailPara = document.createElement("p");
+      const feedbackPara = document.createElement("p");
+    
+      const ratingNode = document.createTextNode(`Rating: ${rating}`);
+      const emailNode = document.createTextNode(`Email: ${email}`);
+      const feedbackNode = document.createTextNode(`Feedback Count: ${feedback}`);
+    
+      ratingPara.appendChild(ratingNode);
+      emailPara.appendChild(emailNode);
+      feedbackPara.appendChild(feedbackNode);
+      if (correct == true) {
+        feedbackContainer.appendChild(ratingPara);
+        feedbackContainer.appendChild(emailPara);
+        feedbackContainer.appendChild(feedbackPara);
       
-      alert(`Rating: ${rating} , Correct Email: ${correct} , Number of Words: ${feedback}`)
+        const element = document.getElementById("bigPage");
+        element.appendChild(feedbackContainer);
+      }
+    
+      return false;
     }
-
+    
+    
   </script>
   </body>

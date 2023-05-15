@@ -1,41 +1,46 @@
-<TYPE html>
-    <head>
-    <title>Projects</title>
-    <link rel="stylesheet" href="myclasses.css">
-    <link href="https://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet">
-    </head>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Projects</title>
+  <link rel="stylesheet" href="myclasses.css">
+  <link href="https://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet">
+</head>
     <body id="background" class="Colors">
-      <h1 class="Heading"> Projects </h1>
-  
-      <div class="dropdown">
-        <button id="HomeBtn" class="dropbtn">Home Page</button>
-        <div class="dropdown-content">
-          <a href="index.html">Welcome Page</a>
-          <a href="Projects.html">Projects</a>
-          <a href="Education.html">Education</a>
-          <a href="Languages.html">Languages</a>
-        </div>
+      <div class="footer">
+        <p>Projects</p>
       </div>
   
-      <div class="dropdown">
-        <button id="DemoBtn" class="dropbtn">Demo Page</button>
-        <div class="dropdown-content">
-          <a href="Second.html">Cool Stuff</a>
+      <div class="button-container">
+        <div class="dropdown">
+          <button id="HomeBtn" class="dropbtn">Home</button>
+          <div class="dropdown-content">
+            <a href="index.html">Welcome</a>
+            <a href="Projects.html">Projects</a>
+            <a href="Education.html">Education</a>
+            <a href="Languages.html">Languages</a>
+          </div>
         </div>
-      </div>
-  
-      <div class="dropdown">
-        <button id="AboutBtn" class="dropbtn">About Me</button>
-        <div class="dropdown-content">
-          <a href="AboutMe.html">Origins</a>
-          <a href="AboutMe.html">Interests</a>
+      
+        <div class="dropdown">
+          <button id="DemoBtn" class="dropbtn">Demo</button>
+          <div class="dropdown-content">
+            <a href="Second.html">Cool Stuff!</a>
+          </div>
         </div>
-      </div>
-
-      <div class="dropdown">
-        <button id="RateBtn" class="dropbtn">Rating</button>
-        <div class="dropdown-content">
-          <a href="Feedback.html">Feedback</a>
+      
+        <div class="dropdown">
+          <button id="AboutBtn" class="dropbtn">Resume and About Me</button>
+          <div class="dropdown-content">
+            <a href="ResumeDownload.html">Resume</a>
+            <a href="AboutMe.html">About Me</a>
+          </div>
+        </div>
+      
+        <div class="dropdown">
+          <button id="RateBtn" class="dropbtn">Feedback</button>
+          <div class="dropdown-content">
+            <a href="Feedback.html">Feedback</a>
+          </div>
         </div>
       </div>
   
@@ -49,32 +54,48 @@
         Here are some of the projects I've worked on throughout my time here at UNL:
       </div>
 
-      <div>
-        <img src="RetroRerun.PNG" alt="RetroGaming">
+      <div id="flexlarge" class="flex-container">
+        <div id="flex1" class="flex-container2">
+          <div class="flex-item">
+            <img src="RetroRerun.PNG" alt="RetroGaming">
+          </div>
+        </div>
       </div>
 
       <div class="social-distance">
         A Super Mario inspired platformer created for Cornhacks 2022. It uses parody designs and themes of classic retro games such as Asteroids, Donkey Kong, and Pac-Man.
       </div>
 
-      <div>
-        <img src="baldorf.png" alt="baldorf">
+      <div id="flexlarge2" class="flex-container">
+        <div id="flex1" class="flex-container2">
+          <div class="flex-item">
+            <img src="baldorf.png" alt="baldorf">
+          </div>
+        </div>
       </div>
 
       <div class="social-distance">
-        A fun ball bouncing game created for the Senior Design Program through Mystics Rhoads Producstions (MRP). The objective is to hit the glowing panels on the door for as long as you can without dropping the ball.
+        A fun ball bouncing game created for the Senior Design Program through Mystics Rhoads Producstions (MRP). The objective is to hit the glowing panels on the door for as long as you can without dropping the ball and losing all of your "outs".
       </div>
 
-      <div class="social-distance">
-        <img src="OpenMRS.png" alt="SEPSIS">
+      <div id="flexlarge3" class="flex-container">
+        <div id="flex1" class="flex-container2">
+          <div class="flex-item">
+            <img src="OpenMRS.png" alt="SEPSIS">
+          </div>
+        </div>
       </div>
 
       <div class="social-distance">
         The Sepsis Determination Algorithm using the API, OpenMRS, for the UNL 2020-2021 Software Capstone Project. A project the caused many a headache during the confusing online only pandemic era of college.
       </div>
 
-      <div class="social-distance">
-        <img src="ThisProject.PNG" width="1300" height="500" alt="Wait what?">
+      <div id="flexlarge4" class="flex-container">
+        <div id="flex1" class="flex-container2">
+          <div class="flex-item">
+            <img src="ThisProject.PNG" alt="Wait what?">
+          </div>
+        </div>
       </div>
 
       <div class="social-distance">
@@ -89,12 +110,20 @@
             document.getElementById("DemoBtn").className = "dropbtn";
             document.getElementById("AboutBtn").className = "dropbtn";
             document.getElementById("RateBtn").className = "dropbtn";
+            document.getElementById("flexlarge").className = "flex-container";
+            document.getElementById("flexlarge2").className = "flex-container";
+            document.getElementById("flexlarge3").className = "flex-container";
+            document.getElementById("flexlarge4").className = "flex-container";
           } else {
             document.getElementById("background").className = "dark-colors";
             document.getElementById("HomeBtn").className = "dark-dropbtn";
             document.getElementById("DemoBtn").className = "dark-dropbtn";
             document.getElementById("AboutBtn").className = "dark-dropbtn";
             document.getElementById("RateBtn").className = "dark-dropbtn";
+            document.getElementById("flexlarge").className = "dark-flex-container";
+            document.getElementById("flexlarge2").className = "dark-flex-container";
+            document.getElementById("flexlarge3").className = "dark-flex-container";
+            document.getElementById("flexlarge4").className = "dark-flex-container";
           }
         }
       </script>

@@ -1,41 +1,45 @@
-<TYPE html>
+<!DOCTYPE html>
     <head>
     <title>Second</title>
     <link rel="stylesheet" href="myclasses.css">
     <link href="https://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet">
     </head>
     <body id="background" class="Colors">
-      <h1 class="Heading"> Page Currently Under Maintainence </h1>
+      <div class="footer">
+        <p>Demo</p>
+      </div>
 
-      <div class="dropdown">
-        <button id="HomeBtn" class="dropbtn">Home Page</button>
-        <div class="dropdown-content">
-          <a href="index.html">Welcome Page</a>
-          <a href="Projects.html">Projects</a>
-          <a href="Education.html">Education</a>
-          <a href="Languages.html">Languages</a>
+      <div class="button-container">
+        <div class="dropdown">
+          <button id="HomeBtn" class="dropbtn">Home</button>
+          <div class="dropdown-content">
+            <a href="index.html">Welcome</a>
+            <a href="Projects.html">Projects</a>
+            <a href="Education.html">Education</a>
+            <a href="Languages.html">Languages</a>
+          </div>
         </div>
-      </div>
-  
-      <div class="dropdown">
-        <button id="DemoBtn" class="dropbtn">Demo Page</button>
-        <div class="dropdown-content">
-          <a href="Second.html">Cool Stuff</a>
+      
+        <div class="dropdown">
+          <button id="DemoBtn" class="dropbtn">Demo</button>
+          <div class="dropdown-content">
+            <a href="Second.html">Cool Stuff!</a>
+          </div>
         </div>
-      </div>
-  
-      <div class="dropdown">
-        <button id="AboutBtn" class="dropbtn">About Me</button>
-        <div class="dropdown-content">
-          <a href="AboutMe.html">Origins</a>
-          <a href="AboutMe.html">Interests</a>
+      
+        <div class="dropdown">
+          <button id="AboutBtn" class="dropbtn">Resume and About Me</button>
+          <div class="dropdown-content">
+            <a href="ResumeDownload.html">Resume</a>
+            <a href="AboutMe.html">About Me</a>
+          </div>
         </div>
-      </div>
-  
-      <div class="dropdown">
-        <button id="RateBtn" class="dropbtn">Rating</button>
-        <div class="dropdown-content">
-          <a href="Feedback.html">Feedback</a>
+      
+        <div class="dropdown">
+          <button id="RateBtn" class="dropbtn">Feedback</button>
+          <div class="dropdown-content">
+            <a href="Feedback.html">Feedback</a>
+          </div>
         </div>
       </div>
 
@@ -45,30 +49,235 @@
         </button>
       </div>
 
-      <div class="social-distance">
-        This page is currently under construction. Please return at another time.
+      <div id="game-container">
+        <div class="board">
+          <div class="cell" id="0"></div>
+          <div class="cell" id="1"></div>
+          <div class="cell" id="2"></div>
+          <div class="cell" id="3"></div>
+          <div class="cell" id="4"></div>
+          <div class="cell" id="5"></div>
+          <div class="cell" id="6"></div>
+          <div class="cell" id="7"></div>
+          <div class="cell" id="8"></div>
+        </div>
+        <div id="message"></div>
+
+        <button id="reset-button">Reset Game</button>
       </div>
-      <img src="construction.png" alt="big things coming!">
-      <div class="social-distance">
-        Please visit other pages while this is completed.
+
+      <div id="game-container">
+        <div id="word-container"></div>
+        <div id="guessed-letters"></div>
+        <div id="guesses-container">
+          <input type="text" id="letter-input" placeholder="Enter a letter">
+          <button id="guess-button">Guess</button>
+          <button id="reset-button-word">Reset Game</button>
+        </div>
+        <div id="message-container"></div>
       </div>
+
       <script>
         function changeTheme(){
           if (document.getElementById("background").className == "dark-colors"){
             document.getElementById("background").className = "Colors";
-            document.getElementById("flexlarge").className = "flex-container";
             document.getElementById("HomeBtn").className = "dropbtn";
             document.getElementById("DemoBtn").className = "dropbtn";
             document.getElementById("AboutBtn").className = "dropbtn";
             document.getElementById("RateBtn").className = "dropbtn";
           } else {
             document.getElementById("background").className = "dark-colors";
-            document.getElementById("flexlarge").className = "dark-flex-container";
             document.getElementById("HomeBtn").className = "dark-dropbtn";
             document.getElementById("DemoBtn").className = "dark-dropbtn";
             document.getElementById("AboutBtn").className = "dark-dropbtn";
             document.getElementById("RateBtn").className = "dark-dropbtn";
           }
         }
+
+        // Code for Tic Tac Toe
+        const cells = document.querySelectorAll(".cell");
+        const message = document.getElementById("message");
+        const resetButton = document.getElementById("reset-button");
+        let currentPlayer = "X";
+        let board = ["", "", "", "", "", "", "", "", ""];
+
+        cells.forEach((cell) => {
+          cell.addEventListener("click", handleClick);
+        });
+
+        resetButton.addEventListener("click", resetGame);
+
+        function handleClick() {
+          if (this.textContent !== "") {
+            return;
+          }
+          this.textContent = currentPlayer;
+          board[this.id] = currentPlayer;
+          if (checkWin()) {
+            message.textContent = `${currentPlayer} wins!`;
+            disableCellClick();
+            return;
+          }
+          if (board.every((cell) => cell !== "")) {
+            message.textContent = "It's a tie!";
+            return;
+          }
+          currentPlayer = currentPlayer === "X" ? "O" : "X";
+        }
+
+        function checkWin() {
+          const winningCombos = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6],
+          ];
+          return winningCombos.some(
+            (combo) =>
+              board[combo[0]] &&
+              board[combo[0]] === board[combo[1]] &&
+              board[combo[0]] === board[combo[2]]
+          );
+        }
+
+        function disableCellClick() {
+          cells.forEach((cell) => {
+            cell.removeEventListener("click", handleClick);
+          });
+        }
+
+        function resetGame() {
+          cells.forEach((cell) => {
+            cell.textContent = "";
+          });
+          currentPlayer = "X";
+          board = ["", "", "", "", "", "", "", "", ""];
+          message.textContent = "";
+          cells.forEach((cell) => {
+            cell.addEventListener("click", handleClick);
+          });
+        }
+        
+        // Code for FG Character Guessing game
+        const words = ['RYU', 'KEN', 'SOL', 'RAGNA', 'GOLDLEWIS', 'KY', "SIN", "DIZZY", "BLANKA", "BEDMAN", "DELILAH", "BAIKEN", "POTEMKIN"];
+        let selectedWord = '';
+        let guessedLetters = [];
+        let remainingAttempts = 6;
+        
+        function getRandomWord() {
+          return words[Math.floor(Math.random() * words.length)];
+        }
+        
+        function initializeGame() {
+          document.getElementById("letter-input").value = "";
+          selectedWord = getRandomWord();
+          guessedLetters = [];
+          remainingAttempts = 6;
+        
+          updateWordDisplay();
+          updateMessage('Guess a fighting game character!');
+          updateGuessedLetters();
+        }
+        
+        function updateWordDisplay() {
+          const wordContainer = document.getElementById('word-container');
+          wordContainer.innerHTML = '';
+        
+          for (let letter of selectedWord) {
+            const letterDisplay = document.createElement('span');
+            letterDisplay.className = 'letter';
+        
+            if (guessedLetters.includes(letter)) {
+              letterDisplay.textContent = letter;
+            } else {
+              letterDisplay.textContent = '_';
+            }
+        
+            wordContainer.appendChild(letterDisplay);
+          }
+        }
+        
+        function updateMessage(message) {
+          const messageContainer = document.getElementById('message-container');
+          messageContainer.textContent = message;
+        }
+        
+        function updateGuessedLetters() {
+          const guessedLettersContainer = document.getElementById('guessed-letters');
+          guessedLettersContainer.textContent = `Guessed Letters: ${guessedLetters.join(', ')}`;
+        }
+        
+        function revealWord() {
+          const wordContainer = document.getElementById('word-container');
+          wordContainer.innerHTML = `<span class="word-reveal">The word was: ${selectedWord}</span>`;
+        }
+        
+        function handleGuess() {
+          const letterInput = document.getElementById('letter-input');
+          const guessedLetter = letterInput.value.trim().toUpperCase();
+        
+          if (guessedLetter === '') {
+            updateMessage('Please enter a letter.');
+            return;
+          }
+        
+          if (!/^[A-Z]$/.test(guessedLetter)) {
+            updateMessage('Please enter a valid letter.');
+            return;
+          }
+        
+          if (guessedLetters.includes(guessedLetter)) {
+            updateMessage('You already guessed that letter.');
+            return;
+          }
+        
+          if (remainingAttempts <= 0) {
+            updateMessage('Game over! You ran out of attempts.');
+            revealWord();
+            return;
+          }
+        
+          guessedLetters.push(guessedLetter);
+        
+          if (selectedWord.split('').every((letter) => guessedLetters.includes(letter))) {
+            updateMessage('Congratulations! You guessed the word!');
+            revealWord();
+            return;
+          }
+        
+          if (selectedWord.includes(guessedLetter)) {
+            updateMessage('Good guess!');
+          } else {
+            remainingAttempts--;
+        
+            if (remainingAttempts === 0) {
+              updateMessage('Game over! You ran out of attempts.');
+              revealWord();
+            } else {
+              updateMessage(`Wrong guess! ${remainingAttempts} attempts remaining.`);
+            }
+          }
+        
+          updateWordDisplay();
+          updateGuessedLetters();
+          letterInput.value = '';
+        
+          letterInput.focus();
+        }
+        
+
+        function resetGameWord() {
+          initializeGame();
+        }
+
+        document.getElementById('guess-button').addEventListener('click', handleGuess);
+        document.getElementById('reset-button-word').addEventListener('click', resetGameWord);
+
+        initializeGame();
+
       </script>
     </body>
